@@ -1,0 +1,48 @@
+{
+  "mongodb":{
+    "net":{
+      "port": 27017,
+      "bindIp": "127.0.0.1",
+      "retry": {
+        "delay": 500,
+        "nb": 0
+      }
+    },
+    "security":{
+      "authorization": "enabled"
+    },
+    "users-standard":
+    { "user": "my-app", "pwd": "azerty3", "roles": ["readWrite"] }
+  },
+  "server":{
+    "net":{
+      "port": 4242,
+      "bindIp": "127.0.0.1",
+      "url": "localhost",
+      "protocol": "http"
+    },
+    "format" : {
+      "RESTApi": true,
+      "JSONApi": false
+    }
+  },
+  "services":{
+    "mailing": {},
+    "sms": {},
+    "push-notify":{}
+  },
+  "environments":[
+    "dev",
+    "local",
+    "staging",
+    "prod"
+  ],
+  "environment":{
+    "prod": false,
+    "cache-api": 0,
+    "log": {
+      "level" : "higth",
+      "targetSource": "./tmp/log"
+    }
+  }
+}
