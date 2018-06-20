@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+// TASKS
+require(__dirname.replace(/(\.bin|bin)/, '') + 'lib/generate');
