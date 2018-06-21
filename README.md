@@ -6,11 +6,19 @@
 node < 7.X.X
 
 ## install
-`npm install -g git://github.com/caloudinou/grizzly-cli.git#feature/alpha-version`
+`npm install -g git://github.com/caloudinou/grizzly-cli.git#develop`
 
 
 ## create project
 `gz new` **[nameProject]**
+
+## list command
+
+npm run start : launch server with reload auto when save
+npm run build : build app
+npm run serve : launch server
+npm run build-run : build and launch server
+npm test : launch all test
 
 #### configuration on your project
 create in directory app/config your file [environment]-parameter.json :
