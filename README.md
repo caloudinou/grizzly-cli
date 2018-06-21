@@ -22,6 +22,9 @@ npm test : launch all test
 
 #### configuration on your project
 create in directory app/config your file [environment]-parameter.json :
+> to dev make a local-parameter.json because by default the application is run local. and a production-parameter.json to build.
+>> change the environement `npm run start --env=`**[environement]**
+
 > **certain property will be next feature**
 ```js
 {
