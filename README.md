@@ -21,8 +21,8 @@ npm run build-run : build and launch server
 npm test : launch all test
 
 #### configuration on your project
-create in directory app/config your file [environment]-parameter.json :
-> to dev make a local-parameter.json because by default the application is run local. and a production-parameter.json to build.
+create in directory app/config your file [environment]-parameters.json :
+> to dev make a local-parameters.json because by default the application is run local. and a production-parameter.json to build.
 >> change the environement `npm run start --env=`**[environement]**
 
 > **certain property will be next feature**
@@ -225,3 +225,50 @@ constructor () {
 | Mediator |  `Mediator` | `gz.helpers.Mediator`|
 | Observable |  `Observable` | `gz.helpers.Observable`|
 | PublishSubscribe |  `PublishSubscribe` | `gz.helpers.PublishSubscribe`|
+
+
+#bug
+
+fix bug :
+bug first launch app => exemples.controler.js :
+```js
+const Exemples = require(`${__modules}/exemple/models/exemple.model`);
+```
+mongodb authentification faild :
+local-parameters.json >
+if you set user in your mongoDB
+```
+"mongodb":{
+    "net":{
+      "port": 27017,
+      "bindIp": "127.0.0.1",
+      "retry": {
+        "delay": 500,
+        "nb": 0
+      }
+    },
+    "security":{
+      "authorization": "enabled"
+    },
+    "users-standard": {
+      "user": [your user bdd],
+      "pwd": [your password],
+      "roles": ["readWrite"]
+    }
+  },
+```
+if you dont have an user in your mongoDB
+```
+"mongodb":{
+    "net":{
+      ...
+    },
+    "security":{
+      "authorization": "disable"
+    },
+    "users-standard": {
+      ...
+    }
+  },
+```
+
